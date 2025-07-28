@@ -22,7 +22,7 @@ const PersonalizedProfileSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 organic-background grain-texture">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-5xl font-bold text-foreground mb-6">
           Your Personalized Vision Profile

@@ -17,7 +17,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-16 liquid-bg">
+    <footer className="py-16 liquid-bg grain-texture">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <VisionMatchLogo className="justify-center mb-8" />

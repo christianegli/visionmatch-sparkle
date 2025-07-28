@@ -72,6 +72,8 @@ export default {
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-glass': 'var(--gradient-glass)',
 				'gradient-premium': 'var(--gradient-premium)',
+				'gradient-organic-1': 'var(--gradient-organic-1)',
+				'gradient-organic-2': 'var(--gradient-organic-2)',
 			},
 			boxShadow: {
 				'glass': 'var(--shadow-glass)',

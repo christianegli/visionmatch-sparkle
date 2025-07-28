@@ -10,7 +10,7 @@ const ProtectionSection = () => {
   ];
 
   return (
-    <section className="py-24 liquid-bg">
+    <section className="py-24 liquid-bg grain-texture">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-foreground mb-6">

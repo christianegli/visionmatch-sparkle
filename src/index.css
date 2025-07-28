@@ -44,10 +44,18 @@
 
     --radius: 12px;
 
-    /* Custom Gradients */
-    --gradient-hero: linear-gradient(135deg, 
-      hsl(259 94% 51% / 0.1) 0%, 
-      hsl(270 100% 70% / 0.05) 50%, 
+    /* Custom Organic Gradients */
+    --gradient-hero: radial-gradient(ellipse 80% 50% at 20% 40%, 
+      hsl(259 94% 51% / 0.15) 0%, 
+      transparent 50%),
+      radial-gradient(ellipse 60% 80% at 80% 20%, 
+      hsl(270 100% 70% / 0.1) 0%, 
+      transparent 50%),
+      radial-gradient(ellipse 100% 60% at 40% 80%, 
+      hsl(280 90% 65% / 0.08) 0%, 
+      transparent 50%),
+      linear-gradient(135deg, 
+      hsl(240 100% 99%) 0%, 
       hsl(240 100% 97%) 100%);
     
     --gradient-glass: linear-gradient(135deg,
@@ -58,6 +66,26 @@
       hsl(259 94% 51%) 0%,
       hsl(270 100% 70%) 50%,
       hsl(280 90% 65%) 100%);
+
+    --gradient-organic-1: radial-gradient(ellipse 70% 100% at 10% 30%, 
+      hsl(259 94% 51% / 0.12) 0%, 
+      transparent 70%),
+      radial-gradient(ellipse 90% 70% at 90% 70%, 
+      hsl(270 100% 70% / 0.08) 0%, 
+      transparent 70%),
+      linear-gradient(180deg, 
+      hsl(240 100% 98%) 0%, 
+      hsl(240 50% 96%) 100%);
+
+    --gradient-organic-2: radial-gradient(ellipse 60% 90% at 80% 10%, 
+      hsl(280 90% 65% / 0.1) 0%, 
+      transparent 60%),
+      radial-gradient(ellipse 100% 60% at 20% 90%, 
+      hsl(259 94% 51% / 0.08) 0%, 
+      transparent 60%),
+      linear-gradient(45deg, 
+      hsl(240 100% 99%) 0%, 
+      hsl(240 60% 97%) 100%);
 
     /* Shadows */
     --shadow-glass: 0 8px 32px hsl(240 20% 20% / 0.12);
@@ -152,6 +180,14 @@
     background: var(--gradient-hero);
   }
 
+  .organic-gradient-1 {
+    background: var(--gradient-organic-1);
+  }
+
+  .organic-gradient-2 {
+    background: var(--gradient-organic-2);
+  }
+
   .grain-texture {
     position: relative;
   }
@@ -163,17 +199,50 @@
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  .grain-texture-heavy {
+    position: relative;
+  }
+
+  .grain-texture-heavy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.12;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='heavyNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23heavyNoise)'/%3E%3C/svg%3E");
+    background-size: 120px 120px;
+    mix-blend-mode: overlay;
     pointer-events: none;
   }
 
   .liquid-bg {
-    background: linear-gradient(135deg, 
-      hsl(259 94% 51% / 0.05) 0%,
-      hsl(270 100% 70% / 0.03) 30%,
-      hsl(280 90% 65% / 0.02) 60%,
-      hsl(240 100% 97%) 100%);
+    background: var(--gradient-organic-1);
+  }
+
+  .liquid-bg-alt {
+    background: var(--gradient-organic-2);
+  }
+
+  .organic-background {
+    background: radial-gradient(ellipse 90% 60% at 30% 20%, 
+      hsl(259 94% 51% / 0.08) 0%, 
+      transparent 50%),
+      radial-gradient(ellipse 60% 90% at 70% 80%, 
+      hsl(270 100% 70% / 0.06) 0%, 
+      transparent 50%),
+      radial-gradient(ellipse 80% 70% at 90% 30%, 
+      hsl(280 90% 65% / 0.04) 0%, 
+      transparent 50%),
+      hsl(var(--background));
   }
 
   .hover-glass {

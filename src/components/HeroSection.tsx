@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-glasses.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient grain-texture">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient grain-texture-heavy">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 

@@ -3,7 +3,7 @@ import { MapPin, Star } from "lucide-react";
 
 const OpticiansSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 organic-background grain-texture">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-foreground mb-6">
