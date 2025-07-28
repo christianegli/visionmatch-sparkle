@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen main-gradient grain-texture">
+    <div className="min-h-screen bg-gradient-main grain-texture">
       <Navigation />
       <HeroSection />
       <TheNewWaySection />
