@@ -58,27 +58,40 @@
       hsl(240 100% 99%) 0%, 
       hsl(240 100% 97%) 100%);
     
-    /* Main site gradient - Purple to Yellow Iridescent Glass */
-    --gradient-main: radial-gradient(ellipse 150% 100% at 0% 0%, 
-        hsl(290 85% 65% / 0.9) 0%, 
-        hsl(320 80% 70% / 0.7) 30%,
+    /* Main site gradient - Enhanced Glassy Purple to Yellow */
+    --gradient-main: 
+      /* Glass overlay layers */
+      radial-gradient(circle 600px at 20% 30%, 
+        hsl(290 85% 75% / 0.15) 0%, 
+        transparent 60%),
+      radial-gradient(circle 800px at 80% 70%, 
+        hsl(50 95% 75% / 0.12) 0%, 
+        transparent 55%),
+      radial-gradient(circle 400px at 60% 20%, 
+        hsl(310 80% 80% / 0.08) 0%, 
+        transparent 50%),
+      /* Main iridescent layers */
+      radial-gradient(ellipse 150% 100% at 0% 0%, 
+        hsl(290 85% 65% / 0.7) 0%, 
+        hsl(320 80% 70% / 0.5) 30%,
         transparent 70%),
       radial-gradient(ellipse 120% 150% at 100% 100%, 
-        hsl(50 95% 70% / 0.8) 0%, 
-        hsl(40 90% 75% / 0.6) 25%,
+        hsl(50 95% 70% / 0.6) 0%, 
+        hsl(40 90% 75% / 0.4) 25%,
         transparent 65%),
       radial-gradient(ellipse 100% 80% at 30% 70%, 
-        hsl(310 75% 75% / 0.4) 0%, 
+        hsl(310 75% 75% / 0.3) 0%, 
         transparent 60%),
       radial-gradient(ellipse 90% 120% at 70% 30%, 
-        hsl(45 85% 80% / 0.3) 0%, 
+        hsl(45 85% 80% / 0.25) 0%, 
         transparent 50%),
+      /* Base glass gradient */
       linear-gradient(135deg, 
-        hsl(290 70% 85%) 0%,
-        hsl(310 65% 80%) 20%,
-        hsl(330 60% 82%) 40%,
-        hsl(20 80% 78%) 70%,
-        hsl(50 85% 75%) 100%);
+        hsl(240 50% 98%) 0%,
+        hsl(250 40% 96%) 20%,
+        hsl(260 35% 94%) 40%,
+        hsl(40 30% 92%) 70%,
+        hsl(50 40% 90%) 100%);
     
     --gradient-glass: linear-gradient(135deg,
       hsl(240 100% 99% / 0.9) 0%,
@@ -206,9 +219,30 @@
 /* Custom Components */
 @layer components {
   .glass-card {
-    @apply bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl border border-border/30;
-    background-image: var(--gradient-glass);
-    box-shadow: var(--shadow-glass);
+    @apply backdrop-blur-2xl border border-white/20;
+    background: linear-gradient(135deg, 
+      hsl(240 100% 99% / 0.85) 0%,
+      hsl(240 100% 97% / 0.75) 50%,
+      hsl(240 50% 95% / 0.65) 100%);
+    box-shadow: 
+      0 8px 32px hsl(240 20% 20% / 0.12),
+      inset 0 1px 0 hsl(240 100% 100% / 0.4),
+      inset 0 -1px 0 hsl(240 100% 100% / 0.1);
+    position: relative;
+  }
+
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 30%, 
+      hsl(260 100% 95% / 0.3) 0%, 
+      transparent 70%);
+    border-radius: inherit;
+    pointer-events: none;
   }
 
   .glass-button {
@@ -240,10 +274,28 @@
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.06;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    background-size: 180px 180px;
-    mix-blend-mode: multiply;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  .grain-texture::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.04;
+    background: radial-gradient(circle 300px at 25% 25%, 
+      hsl(240 100% 100% / 0.3) 0%, 
+      transparent 70%),
+      radial-gradient(circle 200px at 75% 75%, 
+      hsl(260 80% 95% / 0.2) 0%, 
+      transparent 60%);
+    mix-blend-mode: overlay;
     pointer-events: none;
   }
 
