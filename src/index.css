@@ -6,201 +6,185 @@
 
 @layer base {
   :root {
-    /* Base Colors */
-    --background: 240 100% 99%;
+    /* Base Colors - Enhanced for Glassmorphism */
+    --background: 240 10% 98%;
     --foreground: 240 8% 12%;
 
-    /* Glass & Card Effects */
-    --card: 240 100% 99%;
-    --card-foreground: 240 8% 12%;
-    --glass: 240 100% 99% / 0.8;
-    --glass-border: 240 50% 90% / 0.3;
+    /* Glass Materials - Following NN Group Guidelines */
+    --glass-light: 240 100% 99% / 0.75;
+    --glass-medium: 240 100% 95% / 0.85;
+    --glass-heavy: 240 100% 92% / 0.95;
+    --glass-border: 240 50% 90% / 0.4;
+    --glass-border-accent: 259 94% 85% / 0.6;
 
-    --popover: 240 100% 99%;
+    /* Card & Surface Elements */
+    --card: 240 100% 99% / 0.8;
+    --card-foreground: 240 10% 8%;
+    --popover: 240 100% 99% / 0.9;
     --popover-foreground: 240 8% 12%;
 
-    /* Brand Colors - Purple & Violet Spectrum */
+    /* Brand Colors - Optimized for Glass Surfaces */
     --primary: 259 94% 51%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 240 100% 98%;
     --primary-glow: 270 100% 70%;
+    --primary-glass: 259 94% 51% / 0.15;
     
-    --secondary: 240 100% 97%;
+    --secondary: 240 50% 94%;
     --secondary-foreground: 240 8% 12%;
 
-    /* Interactive States */
-    --muted: 240 50% 96%;
-    --muted-foreground: 240 5% 45%;
-
+    /* Interactive States - Glass-Optimized */
+    --muted: 240 20% 92%;
+    --muted-foreground: 240 8% 35%;
     --accent: 264 83% 57%;
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: 240 100% 98%;
+    --accent-glass: 264 83% 57% / 0.12;
 
+    /* Status Colors */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 240 100% 98%;
 
-    /* Borders & Inputs */
-    --border: 240 20% 88%;
-    --input: 240 20% 92%;
+    /* Borders & Inputs - Enhanced for Glass */
+    --border: 240 20% 88% / 0.5;
+    --input: 240 20% 92% / 0.8;
     --ring: 259 94% 51%;
+    --radius: 16px;
 
-    --radius: 12px;
+    /* Glassmorphism Blur Values */
+    --blur-light: 8px;
+    --blur-medium: 24px;
+    --blur-heavy: 40px;
+    --blur-extreme: 60px;
 
-    /* Custom Organic Gradients */
-    --gradient-hero: radial-gradient(ellipse 80% 50% at 20% 40%, 
-      hsl(259 94% 51% / 0.15) 0%, 
-      transparent 50%),
-      radial-gradient(ellipse 60% 80% at 80% 20%, 
-      hsl(270 100% 70% / 0.1) 0%, 
-      transparent 50%),
-      radial-gradient(ellipse 100% 60% at 40% 80%, 
-      hsl(280 90% 65% / 0.08) 0%, 
-      transparent 50%),
-      linear-gradient(135deg, 
-      hsl(240 100% 99%) 0%, 
-      hsl(240 100% 97%) 100%);
-    
-    /* Main site gradient - Enhanced Glassy Purple to Yellow */
-    --gradient-main: 
-      /* Glass overlay layers */
-      radial-gradient(circle 600px at 20% 30%, 
-        hsl(290 85% 75% / 0.15) 0%, 
+    /* Background Gradients - Optimized for Glass Overlay */
+    --gradient-base: 
+      radial-gradient(circle 800px at 20% 30%, 
+        hsl(240 30% 96%) 0%, 
         transparent 60%),
-      radial-gradient(circle 800px at 80% 70%, 
-        hsl(50 95% 75% / 0.12) 0%, 
+      radial-gradient(circle 600px at 80% 70%, 
+        hsl(260 25% 94%) 0%, 
         transparent 55%),
-      radial-gradient(circle 400px at 60% 20%, 
-        hsl(310 80% 80% / 0.08) 0%, 
-        transparent 50%),
-      /* Main iridescent layers */
-      radial-gradient(ellipse 150% 100% at 0% 0%, 
-        hsl(290 85% 65% / 0.7) 0%, 
-        hsl(320 80% 70% / 0.5) 30%,
-        transparent 70%),
-      radial-gradient(ellipse 120% 150% at 100% 100%, 
-        hsl(50 95% 70% / 0.6) 0%, 
-        hsl(40 90% 75% / 0.4) 25%,
-        transparent 65%),
-      radial-gradient(ellipse 100% 80% at 30% 70%, 
-        hsl(310 75% 75% / 0.3) 0%, 
-        transparent 60%),
-      radial-gradient(ellipse 90% 120% at 70% 30%, 
-        hsl(45 85% 80% / 0.25) 0%, 
-        transparent 50%),
-      /* Base glass gradient */
       linear-gradient(135deg, 
-        hsl(240 50% 98%) 0%,
-        hsl(250 40% 96%) 20%,
-        hsl(260 35% 94%) 40%,
-        hsl(40 30% 92%) 70%,
-        hsl(50 40% 90%) 100%);
-    
-    --gradient-glass: linear-gradient(135deg,
-      hsl(240 100% 99% / 0.9) 0%,
-      hsl(240 100% 95% / 0.6) 100%);
-    
-    --gradient-premium: linear-gradient(135deg,
-      hsl(259 94% 51%) 0%,
-      hsl(270 100% 70%) 50%,
-      hsl(280 90% 65%) 100%);
+        hsl(240 15% 97%) 0%,
+        hsl(250 12% 95%) 100%);
 
-    --gradient-organic-1: radial-gradient(ellipse 140% 100% at 0% 50%, 
-      hsl(220 90% 60% / 0.9) 0%, 
-      hsl(200 85% 65% / 0.7) 30%,
-      transparent 70%),
-      radial-gradient(ellipse 120% 140% at 100% 50%, 
-      hsl(180 95% 65% / 0.8) 0%, 
-      hsl(160 90% 70% / 0.6) 25%,
-      transparent 65%),
-      radial-gradient(ellipse 100% 90% at 50% 100%, 
-      hsl(195 80% 70% / 0.4) 0%, 
-      transparent 60%),
-      radial-gradient(ellipse 80% 110% at 20% 20%, 
-      hsl(170 85% 75% / 0.3) 0%, 
-      transparent 50%),
-      linear-gradient(135deg, 
-      hsl(220 80% 75%) 0%,
-      hsl(200 75% 70%) 25%,
-      hsl(180 80% 68%) 50%,
-      hsl(160 85% 65%) 75%,
-      hsl(175 90% 62%) 100%);
+    /* Glass Surface Gradients */
+    --gradient-glass-surface: 
+      linear-gradient(135deg,
+        hsl(240 100% 99% / 0.9) 0%,
+        hsl(240 50% 95% / 0.7) 50%,
+        hsl(240 100% 92% / 0.8) 100%);
 
-    --gradient-organic-2: radial-gradient(ellipse 110% 90% at 20% 30%, 
-      hsl(270 80% 75% / 0.5) 0%, 
-      hsl(290 75% 70% / 0.3) 35%,
-      transparent 70%),
-      radial-gradient(ellipse 90% 110% at 80% 70%, 
-      hsl(50 85% 70% / 0.4) 0%, 
-      hsl(40 80% 65% / 0.2) 40%,
-      transparent 70%),
-      radial-gradient(ellipse 100% 80% at 50% 10%, 
-      hsl(310 70% 80% / 0.3) 0%, 
-      transparent 50%),
-      linear-gradient(130deg, 
-      hsl(275 60% 88%) 0%, 
-      hsl(295 55% 83%) 25%,
-      hsl(315 50% 80%) 50%,
-      hsl(45 75% 78%) 75%,
-      hsl(40 80% 75%) 100%);
+    --gradient-glass-card: 
+      linear-gradient(145deg,
+        hsl(240 100% 98% / 0.85) 0%,
+        hsl(240 30% 94% / 0.75) 100%);
 
-    /* Shadows */
-    --shadow-glass: 0 8px 32px hsl(240 20% 20% / 0.12);
+    /* Premium Glass Effects */
+    --gradient-glass-premium: 
+      linear-gradient(135deg,
+        hsl(259 94% 95% / 0.9) 0%,
+        hsl(270 70% 90% / 0.8) 50%,
+        hsl(280 60% 85% / 0.85) 100%);
+
+    /* Accent Glass Gradients */
+    --gradient-glass-accent: 
+      linear-gradient(135deg,
+        hsl(264 83% 95% / 0.85) 0%,
+        hsl(274 70% 90% / 0.75) 100%);
+
+    /* Glass Shadows - Multi-layered for Depth */
+    --shadow-glass-light: 
+      0 4px 16px hsl(240 20% 20% / 0.08),
+      0 1px 4px hsl(240 20% 20% / 0.04),
+      inset 0 1px 0 hsl(240 100% 100% / 0.3);
+
+    --shadow-glass-medium: 
+      0 8px 32px hsl(240 20% 20% / 0.12),
+      0 2px 8px hsl(240 20% 20% / 0.06),
+      inset 0 1px 0 hsl(240 100% 100% / 0.4),
+      inset 0 -1px 0 hsl(240 100% 100% / 0.1);
+
+    --shadow-glass-heavy: 
+      0 16px 48px hsl(240 20% 20% / 0.16),
+      0 4px 16px hsl(240 20% 20% / 0.08),
+      inset 0 1px 0 hsl(240 100% 100% / 0.5),
+      inset 0 -1px 0 hsl(240 100% 100% / 0.15);
+
     --shadow-glow: 0 0 40px hsl(259 94% 51% / 0.3);
-    --shadow-elegant: 0 4px 24px hsl(240 20% 20% / 0.08);
 
     /* Typography */
     --font-primary: 'Inter', system-ui, sans-serif;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar Colors */
+    --sidebar-background: 240 100% 98% / 0.9;
+    --sidebar-foreground: 240 8% 12%;
+    --sidebar-primary: 259 94% 51%;
+    --sidebar-primary-foreground: 240 100% 98%;
+    --sidebar-accent: 240 20% 94% / 0.8;
+    --sidebar-accent-foreground: 240 8% 12%;
+    --sidebar-border: 240 20% 88% / 0.5;
+    --sidebar-ring: 259 94% 51%;
+  }
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Glass Materials - Dark Mode */
+    --glass-light: 222.2 84% 8% / 0.8;
+    --glass-medium: 222.2 84% 6% / 0.9;
+    --glass-heavy: 222.2 84% 4% / 0.95;
+    --glass-border: 217.2 32% 25% / 0.6;
+    --glass-border-accent: 259 94% 65% / 0.4;
 
-    --popover: 222.2 84% 4.9%;
+    --card: 222.2 84% 4.9% / 0.85;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9% / 0.9;
     --popover-foreground: 210 40% 98%;
 
+    /* Brand Colors - Dark Mode Glass */
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
+    --primary-glass: 210 40% 98% / 0.15;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 217.2 32.6% 17.5% / 0.8;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
+    --muted: 217.2 32.6% 17.5% / 0.7;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 217.2 32.6% 17.5% / 0.8;
     --accent-foreground: 210 40% 98%;
+    --accent-glass: 217.2 32% 25% / 0.15;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --border: 217.2 32.6% 17.5% / 0.6;
+    --input: 217.2 32.6% 17.5% / 0.8;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
+
+    /* Dark Mode Glass Gradients */
+    --gradient-glass-surface: 
+      linear-gradient(135deg,
+        hsl(222 84% 8% / 0.9) 0%,
+        hsl(222 50% 6% / 0.8) 50%,
+        hsl(222 84% 4% / 0.85) 100%);
+
+    --gradient-glass-card: 
+      linear-gradient(145deg,
+        hsl(222 84% 6% / 0.85) 0%,
+        hsl(222 30% 8% / 0.75) 100%);
+
+    /* Sidebar - Dark Mode */
+    --sidebar-background: 240 5.9% 10% / 0.9;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent: 240 3.7% 15.9% / 0.8;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-border: 240 3.7% 15.9% / 0.6;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -216,18 +200,14 @@
   }
 }
 
-/* Custom Components */
+/* Glassmorphism Components - Following NN Group Best Practices */
 @layer components {
+  /* Primary Glass Card - High Contrast, Accessible */
   .glass-card {
-    @apply backdrop-blur-2xl border border-white/20;
-    background: linear-gradient(135deg, 
-      hsl(240 100% 99% / 0.85) 0%,
-      hsl(240 100% 97% / 0.75) 50%,
-      hsl(240 50% 95% / 0.65) 100%);
-    box-shadow: 
-      0 8px 32px hsl(240 20% 20% / 0.12),
-      inset 0 1px 0 hsl(240 100% 100% / 0.4),
-      inset 0 -1px 0 hsl(240 100% 100% / 0.1);
+    @apply backdrop-blur-2xl border;
+    background: var(--gradient-glass-card);
+    border-color: hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass-medium);
     position: relative;
   }
 
@@ -238,29 +218,124 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 30%, 
-      hsl(260 100% 95% / 0.3) 0%, 
-      transparent 70%);
+    background: radial-gradient(circle at 30% 20%, 
+      hsl(var(--glass-border-accent)) 0%, 
+      transparent 60%);
     border-radius: inherit;
     pointer-events: none;
   }
 
+  /* Light Glass Surface - For Navigation & Headers */
+  .glass-surface {
+    @apply backdrop-blur-xl border;
+    background: var(--gradient-glass-surface);
+    border-color: hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass-light);
+  }
+
+  /* Heavy Glass - For Modals & Overlays */
+  .glass-heavy {
+    backdrop-filter: blur(var(--blur-heavy));
+    background: hsl(var(--glass-heavy));
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass-heavy);
+  }
+
+  /* Glass Button - Premium Feel */
   .glass-button {
-    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground;
-    background-image: var(--gradient-premium);
-    box-shadow: var(--shadow-glow);
+    @apply backdrop-blur-lg border transition-all duration-300;
+    background: var(--gradient-glass-premium);
+    border-color: hsl(var(--glass-border-accent));
+    box-shadow: var(--shadow-glass-medium);
+    color: hsl(var(--card-foreground));
   }
 
+  .glass-button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-glass-heavy);
+    background: linear-gradient(135deg,
+      hsl(259 94% 92% / 0.95) 0%,
+      hsl(270 70% 87% / 0.9) 50%,
+      hsl(280 60% 82% / 0.9) 100%);
+  }
+
+  /* Accent Glass - For CTAs */
+  .glass-accent {
+    @apply backdrop-blur-lg border;
+    background: var(--gradient-glass-accent);
+    border-color: hsl(var(--glass-border-accent));
+    box-shadow: var(--shadow-glass-medium);
+  }
+
+  /* Background Treatments */
+  .glass-background {
+    background: var(--gradient-base);
+    position: relative;
+  }
+
+  .glass-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='glassNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23glassNoise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  /* Text Contrast Helpers */
+  .text-glass-primary {
+    color: hsl(var(--card-foreground));
+    text-shadow: 0 1px 2px hsl(var(--background) / 0.5);
+  }
+
+  .text-glass-secondary {
+    color: hsl(var(--muted-foreground));
+    text-shadow: 0 1px 2px hsl(var(--background) / 0.3);
+  }
+
+  /* Interactive Glass Elements */
+  .glass-interactive {
+    @apply transition-all duration-300 backdrop-blur-lg border;
+    background: hsl(var(--glass-light));
+    border-color: hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass-light);
+  }
+
+  .glass-interactive:hover {
+    background: hsl(var(--glass-medium));
+    border-color: hsl(var(--glass-border-accent));
+    box-shadow: var(--shadow-glass-medium);
+    transform: translateY(-1px);
+  }
+
+  /* Navigation Glass */
+  .glass-nav {
+    @apply backdrop-blur-xl border-b;
+    background: linear-gradient(135deg,
+      hsl(var(--background) / 0.9) 0%,
+      hsl(var(--background) / 0.7) 100%);
+    border-color: hsl(var(--glass-border));
+    box-shadow: 0 4px 16px hsl(var(--foreground) / 0.08);
+  }
+
+  /* Glass Overlay - For Modals */
+  .glass-overlay {
+    backdrop-filter: blur(var(--blur-medium));
+    background: hsl(var(--background) / 0.4);
+  }
+
+  /* Legacy Classes - Updated for Glassmorphism */
   .hero-gradient {
-    background: var(--gradient-hero);
+    background: var(--gradient-base);
   }
 
-  .organic-gradient-1 {
-    background: var(--gradient-organic-1);
-  }
-
-  .organic-gradient-2 {
-    background: var(--gradient-organic-2);
+  .main-gradient {
+    background: var(--gradient-base);
   }
 
   .grain-texture {
@@ -274,72 +349,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.08;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    background-size: 160px 160px;
-    mix-blend-mode: soft-light;
-    pointer-events: none;
-  }
-
-  .grain-texture::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.04;
-    background: radial-gradient(circle 300px at 25% 25%, 
-      hsl(240 100% 100% / 0.3) 0%, 
-      transparent 70%),
-      radial-gradient(circle 200px at 75% 75%, 
-      hsl(260 80% 95% / 0.2) 0%, 
-      transparent 60%);
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='subtleNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23subtleNoise)'/%3E%3C/svg%3E");
+    background-size: 300px 300px;
     mix-blend-mode: overlay;
     pointer-events: none;
-  }
-
-  .grain-texture-heavy {
-    position: relative;
-  }
-
-  .grain-texture-heavy::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.12;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='heavyNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23heavyNoise)'/%3E%3C/svg%3E");
-    background-size: 120px 120px;
-    mix-blend-mode: overlay;
-    pointer-events: none;
-  }
-
-  .liquid-bg {
-    background: var(--gradient-organic-1);
-  }
-
-  .liquid-bg-alt {
-    background: var(--gradient-organic-2);
-  }
-
-  .organic-background {
-    background: radial-gradient(ellipse 90% 60% at 30% 20%, 
-      hsl(259 94% 51% / 0.08) 0%, 
-      transparent 50%),
-      radial-gradient(ellipse 60% 90% at 70% 80%, 
-      hsl(270 100% 70% / 0.06) 0%, 
-      transparent 50%),
-      radial-gradient(ellipse 80% 70% at 90% 30%, 
-      hsl(280 90% 65% / 0.04) 0%, 
-      transparent 50%),
-      hsl(var(--background));
-  }
-
-  .main-gradient {
-    background: var(--gradient-main);
   }
 
   .hover-glass {
@@ -348,6 +362,6 @@
 
   .hover-glass:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-elegant);
+    box-shadow: var(--shadow-glass-medium);
   }
 }
